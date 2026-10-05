@@ -1,0 +1,8 @@
+name: p2p
+services:
+  benchmark:
+    build: .
+    image: p2p-benchmark:1.0
+    volumes:
+      - ./resultados-windows:/app/resultados
+    command: ["benchmark", "--sizes", "5,50,500", "--clients", "2,4,8", "--repeats", "3", "--pool", "2", "--out", "/app/resultados"]

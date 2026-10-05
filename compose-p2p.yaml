@@ -1,0 +1,33 @@
+name: p2p-arvore
+x-peer: &peer
+  image: p2p-benchmark:1.0
+  environment:
+    READY_FILE: /tmp/peer-ready
+  healthcheck:
+    test: ["CMD-SHELL", "test -f /tmp/peer-ready"]
+    interval: 1s
+    timeout: 1s
+    retries: 30
+services:
+  peer3:
+    <<: *peer
+    command: ["peer", "3", "9000", "50"]
+  peer4:
+    <<: *peer
+    command: ["peer", "4", "9000", "50"]
+  peer2:
+    <<: *peer
+    command: ["peer", "2", "9000", "50"]
+  peer1:
+    <<: *peer
+    command: ["peer", "1", "9000", "50", "peer3:9000", "peer4:9000"]
+    depends_on:
+      peer3: {condition: service_healthy}
+      peer4: {condition: service_healthy}
+  origem:
+    <<: *peer
+    build: .
+    command: ["peer", "0", "9000", "50", "peer1:9000", "peer2:9000"]
+    depends_on:
+      peer1: {condition: service_healthy}
+      peer2: {condition: service_healthy}

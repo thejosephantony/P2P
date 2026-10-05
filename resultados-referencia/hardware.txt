@@ -1,0 +1,3 @@
+cpu_modelo=AMD EPYC 9V74 80-Core Processor (ambiente virtualizado)
+memoria_limite=8 GiB de limite no ambiente
+cpu_quota=8 CPUs equivalentes (cpu.max 800000 100000)

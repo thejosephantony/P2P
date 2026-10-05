@@ -1,0 +1,7 @@
+out/
+target/
+teste-rapido/
+resultados-windows/
+*.log
+.idea/
+nbproject/private/

@@ -1,0 +1,12 @@
+data_utc=2026-10-05T02:36:06.568789181Z
+os=Linux 6.18.44
+arquitetura=amd64
+java=17.0.20
+processadores_logicos=8
+rede=TCP IPv4 loopback 127.0.0.1; processos JVM separados
+tamanhos_MB=[5, 50, 500]
+clientes=[2, 4, 8]
+repeticoes=3
+pool=2
+bloco_bytes=65536
+MB=1000000 bytes

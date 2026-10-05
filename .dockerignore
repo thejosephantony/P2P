@@ -1,0 +1,8 @@
+.git
+out
+target
+dist
+resultados*
+teste-rapido
+relatorio
+*.zip
