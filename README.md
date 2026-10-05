@@ -10,14 +10,7 @@ envia somente aos dois primeiros peers. Não é um protocolo BitTorrent.
 
 ## Executar agora no Windows
 
-Extraia o conteúdo deste projeto para `C:\Users\Joseph\Downloads\P2P`.
-A pasta deve conter diretamente `README.md`, `src` e `dist`.
-O JAR já está compilado. Não precisa instalar Maven, RabbitMQ, Mosquitto ou Python
-para executar os experimentos. Java 17 ou mais recente é suficiente; seu JDK 25
-também executa o JAR.
-
 ```powershell
-cd C:\Users\Joseph\Downloads\P2P
 java -jar .\dist\p2p.jar --help
 java -jar .\dist\p2p.jar selftest
 ```
@@ -158,30 +151,6 @@ Para regenerar o relatório com novas medições, Python é opcional:
 python -m pip install reportlab matplotlib
 python .\relatorio\gerar_relatorio.py --dados .\resultados-windows --saida .\relatorio\Relatorio_Windows.pdf --autor "Joseph" --matricula "SUA_MATRICULA"
 ```
-
-## Entrega e GitHub
-
-Entregue o PDF no Classroom e publique este projeto em um **novo repositório P2P**.
-Mantenha a pasta `resultados-referencia` para permitir conferir os resultados.
-Antes de enviar, confira sua identificação e os integrantes do grupo no PDF.
-
-O repositório deve conter código, README, configurações, CSVs, PDF e o JAR.
-Configure seu nome/e-mail de autor do Git e use uma mensagem que descreva a
-implementação. Não há histórico de commits inventado neste pacote.
-
-```powershell
-git init
-git add .
-git commit -m "Implementa quatro modos TCP, experimentos e relatorio de desempenho"
-git branch -M main
-git remote add origin https://github.com/thejosephantony/P2P.git
-git push -u origin main
-```
-
-Crie o repositório vazio no GitHub antes do `push`; se tiver escolhido outro nome,
-substitua a URL. Se já existir `origin`, confira com `git remote -v` e use
-`git remote set-url origin URL_CORRETA`. Compartilhe o link com o professor.
-
 ## Limitações
 
 O experimento mede uma emulação local: rede loopback, recursos compartilhados e
